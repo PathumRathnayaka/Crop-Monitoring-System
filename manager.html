@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard with Sidebar and Detailed Sections</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+
+<body>
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar p-3">
+        <h4>Dashboard</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="showHome()">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showProfile()">Field Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showCropService()">Crop Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showStaffService()">Staff Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showLogMonitoring()">Log Monitoring</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showEquipmentService()">Equipment Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showAuthService()">Auth Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showVehicleService()">Vehicle Service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1 p-4" id="mainContent">
+        <h1>Welcome to the Dashboard</h1>
+        <p>This is the main content area.</p>
+    </div>
+</div>
+
+<script>
+    function showHome() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Welcome to the Dashboard</h1>
+                <p>This is the main content area.</p>
+            `;
+    }
+
+    function showProfile() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Add Profile Details</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="profileName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="profileName" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="profileAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="profileAddress" placeholder="Enter your address">
+                    </div>
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </form>
+            `;
+    }
+
+    function showCropService() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Crop Service</h1>
+                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
+                <form id="cropForm">
+                    <div class="mb-3">
+                        <label for="cropName" class="form-label">Crop Name</label>
+                        <input type="text" class="form-control" id="cropName" placeholder="Enter crop name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cropType" class="form-label">Crop Type</label>
+                        <input type="text" class="form-control" id="cropType" placeholder="Enter crop type">
+                    </div>
+                    <div class="mb-3">
+                        <label for="growthStage" class="form-label">Growth Stage</label>
+                        <input type="text" class="form-control" id="growthStage" placeholder="Enter growth stage">
+                    </div>
+                    <div class="mb-3">
+                        <label for="totalExtent" class="form-label">Total Extent</label>
+                        <input type="text" class="form-control" id="totalExtent" placeholder="Enter total extent">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fieldObservations" class="form-label">Field Observations</label>
+                        <textarea class="form-control" id="fieldObservations" rows="3" placeholder="Enter field observations"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="addCrop()">Save</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </form>
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered" id="cropTable">
+                        <thead>
+                            <tr>
+                                <th>Crop Name</th>
+                                <th>Crop Type</th>
+                                <th>Growth Stage</th>
+                                <th>Total Extent</th>
+                                <th>Field Observations</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Crop details will be added here -->
+                        </tbody>
+                    </table>
+                </div>
+            `;
+    }
+
+    function addCrop() {
+        const cropName = document.getElementById('cropName').value;
+        const cropType = document.getElementById('cropType').value;
+        const growthStage = document.getElementById('growthStage').value;
+        const totalExtent = document.getElementById('totalExtent').value;
+        const fieldObservations = document.getElementById('fieldObservations').value;
+        const description = document.getElementById('description').value;
+
+        const table = document.getElementById('cropTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        newRow.innerHTML = `
+                <td>${cropName}</td>
+                <td>${cropType}</td>
+                <td>${growthStage}</td>
+                <td>${totalExtent}</td>
+                <td>${fieldObservations}</td>
+                <td>${description}</td>
+            `;
+
+        // Clear the input fields after adding
+        document.getElementById('cropForm').reset();
+    }
+
+    function showStaffService() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Staff Service</h1>
+                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
+                <form>
+                    <div class="mb-3">
+                        <label for="sectionName" class="form-label">Section Name</label>
+                        <input type="text" class="form-control" id="sectionName" placeholder="Enter section name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sectionId" class="form-label">Section ID</label>
+                        <input type="text" class="form-control" id="sectionId" placeholder="Enter section ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="employeeName" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" id="employeeName" placeholder="Enter employee name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="employeeAddress" class="form-label">Employee Address</label>
+                        <input type="text" class="form-control" id="employeeAddress" placeholder="Enter employee address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="employeeContact" class="form-label">Employee Contact</label>
+                        <input type="text" class="form-control" id="employeeContact" placeholder="Enter employee contact">
+                    </div>
+                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-warning">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </form>
+            `;
+    }
+
+    function showLogMonitoring() {
+        document.getElementById(' mainContent').innerHTML = `
+                <h1>Log Monitoring</h1>
+                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Role Name</th>
+                                <th>Changed Section</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Admin</td>
+                                <td>Settings</td>
+                                <td>Updated settings for user permissions</td>
+                                <td>2023-10-01</td>
+                            </tr>
+                            <tr>
+                                <td>Manager</td>
+                                <td>Reports</td>
+                                <td>Generated monthly report</td>
+                                <td>2023-10-02</td>
+                            </tr>
+                            <tr>
+                                <td>Staff</td>
+                                <td>Profile</td>
+                                <td>Updated personal information</td>
+                                <td>2023-10-03</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            `;
+    }
+
+    function showEquipmentService() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Equipment Service</h1>
+                <p>Details about equipment service will go here.</p>
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            `;
+    }
+
+    function showAuthService() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Auth Service</h1>
+                <p>Details about authentication service will go here.</p>
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            `;
+    }
+
+    function showVehicleService() {
+        document.getElementById('mainContent').innerHTML = `
+                <h1>Vehicle Service</h1>
+                <p>Details about vehicle service will go here.</p>
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-warning">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            `;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
