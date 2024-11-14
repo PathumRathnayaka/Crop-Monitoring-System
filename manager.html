@@ -2,267 +2,407 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard with Sidebar and Detailed Sections</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-<div class="d-flex">
-    <!-- Sidebar -->
-    <div class="sidebar p-3">
-        <h4>Dashboard</h4>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="#" onclick="showHome()">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showProfile()">Field Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showCropService()">Crop Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showStaffService()">Staff Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showLogMonitoring()">Log Monitoring</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showEquipmentService()">Equipment Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showAuthService()">Auth Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showVehicleService()">Vehicle Service</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content flex-grow-1 p-4" id="mainContent">
-        <h1>Welcome to the Dashboard</h1>
-        <p>This is the main content area.</p>
-    </div>
+<!-- Sidebar Start -->
+<div class="sidebar pe-4 pb-3">
+    <nav class="navbar bg-light navbar-light">
+        <a href="index.html" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Manager</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="css/img/pathum%202.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Pathum </h6>
+                <span>Manager</span>
+            </div>
+        </div>
+        <div class="navbar-nav w-100">
+            <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Field</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="button.html" class="dropdown-item">Buttons</a>
+                    <a href="typography.html" class="dropdown-item">Typography</a>
+                    <a href="element.html" class="dropdown-item">Other Elements</a>
+                </div>
+            </div>
+            <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Crop</a>
+            <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Staff</a>
+            <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Log Monitoring</a>
+            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Vehicle</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Equipment</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="signin.html" class="dropdown-item">Sign In</a>
+                    <a href="signup.html" class="dropdown-item">Sign Up</a>
+                    <a href="404.html" class="dropdown-item">404 Error</a>
+                    <a href="blank.html" class="dropdown-item">Blank Page</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 </div>
-
-<script>
-    function showHome() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Welcome to the Dashboard</h1>
-                <p>This is the main content area.</p>
-            `;
-    }
-
-    function showProfile() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Add Profile Details</h1>
-                <form>
-                    <div class="mb-3">
-                        <label for="profileName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="profileName" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="profileAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="profileAddress" placeholder="Enter your address">
-                    </div>
-                    <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </form>
-            `;
-    }
-
-    function showCropService() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Crop Service</h1>
-                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
-                <form id="cropForm">
-                    <div class="mb-3">
-                        <label for="cropName" class="form-label">Crop Name</label>
-                        <input type="text" class="form-control" id="cropName" placeholder="Enter crop name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="cropType" class="form-label">Crop Type</label>
-                        <input type="text" class="form-control" id="cropType" placeholder="Enter crop type">
-                    </div>
-                    <div class="mb-3">
-                        <label for="growthStage" class="form-label">Growth Stage</label>
-                        <input type="text" class="form-control" id="growthStage" placeholder="Enter growth stage">
-                    </div>
-                    <div class="mb-3">
-                        <label for="totalExtent" class="form-label">Total Extent</label>
-                        <input type="text" class="form-control" id="totalExtent" placeholder="Enter total extent">
-                    </div>
-                    <div class="mb-3">
-                        <label for="fieldObservations" class="form-label">Field Observations</label>
-                        <textarea class="form-control" id="fieldObservations" rows="3" placeholder="Enter field observations"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" id="description" rows="3" placeholder="Enter description"></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="addCrop()">Save</button>
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </form>
-                <div class="table-responsive mt-4">
-                    <table class="table table-bordered" id="cropTable">
-                        <thead>
-                            <tr>
-                                <th>Crop Name</th>
-                                <th>Crop Type</th>
-                                <th>Growth Stage</th>
-                                <th>Total Extent</th>
-                                <th>Field Observations</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Crop details will be added here -->
-                        </tbody>
-                    </table>
+<!-- Sidebar End -->
+<!-- Content Start -->
+<div class="content">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>
+        <form class="d-none d-md-flex ms-4">
+            <input class="form-control border-0" type="search" placeholder="Search">
+        </form>
+        <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa fa-envelope me-lg-2"></i>
+                    <span class="d-none d-lg-inline-flex">Message</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <div class="d-flex align-items-center">
+                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <div class="ms-2">
+                                <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item text-center">See all message</a>
                 </div>
-            `;
-    }
-
-    function addCrop() {
-        const cropName = document.getElementById('cropName').value;
-        const cropType = document.getElementById('cropType').value;
-        const growthStage = document.getElementById('growthStage').value;
-        const totalExtent = document.getElementById('totalExtent').value;
-        const fieldObservations = document.getElementById('fieldObservations').value;
-        const description = document.getElementById('description').value;
-
-        const table = document.getElementById('cropTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
-
-        newRow.innerHTML = `
-                <td>${cropName}</td>
-                <td>${cropType}</td>
-                <td>${growthStage}</td>
-                <td>${totalExtent}</td>
-                <td>${fieldObservations}</td>
-                <td>${description}</td>
-            `;
-
-        // Clear the input fields after adding
-        document.getElementById('cropForm').reset();
-    }
-
-    function showStaffService() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Staff Service</h1>
-                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
-                <form>
-                    <div class="mb-3">
-                        <label for="sectionName" class="form-label">Section Name</label>
-                        <input type="text" class="form-control" id="sectionName" placeholder="Enter section name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="sectionId" class="form-label">Section ID</label>
-                        <input type="text" class="form-control" id="sectionId" placeholder="Enter section ID">
-                    </div>
-                    <div class="mb-3">
-                        <label for="employeeName" class="form-label">Employee Name</label>
-                        <input type="text" class="form-control" id="employeeName" placeholder="Enter employee name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="employeeAddress" class="form-label">Employee Address</label>
-                        <input type="text" class="form-control" id="employeeAddress" placeholder="Enter employee address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="employeeContact" class="form-label">Employee Contact</label>
-                        <input type="text" class="form-control" id="employeeContact" placeholder="Enter employee contact">
-                    </div>
-                    <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-warning">Update</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </form>
-            `;
-    }
-
-    function showLogMonitoring() {
-        document.getElementById(' mainContent').innerHTML = `
-                <h1>Log Monitoring</h1>
-                <input type="text" class="form-control mb-3" placeholder="Search..." aria-label="Search">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Role Name</th>
-                                <th>Changed Section</th>
-                                <th>Description</th>
-                                <th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Admin</td>
-                                <td>Settings</td>
-                                <td>Updated settings for user permissions</td>
-                                <td>2023-10-01</td>
-                            </tr>
-                            <tr>
-                                <td>Manager</td>
-                                <td>Reports</td>
-                                <td>Generated monthly report</td>
-                                <td>2023-10-02</td>
-                            </tr>
-                            <tr>
-                                <td>Staff</td>
-                                <td>Profile</td>
-                                <td>Updated personal information</td>
-                                <td>2023-10-03</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa fa-bell me-lg-2"></i>
+                    <span class="d-none d-lg-inline-flex">Notificatin</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">Profile updated</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">New user added</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item">
+                        <h6 class="fw-normal mb-0">Password changed</h6>
+                        <small>15 minutes ago</small>
+                    </a>
+                    <hr class="dropdown-divider">
+                    <a href="#" class="dropdown-item text-center">See all notifications</a>
                 </div>
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            `;
-    }
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="css/img/pathum%202.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">Pathum</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">My Profile</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="#" class="dropdown-item">Log Out</a>
+                </div>
+            </div>
+    </nav>
+    <!-- Navbar End -->
 
-    function showEquipmentService() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Equipment Service</h1>
-                <p>Details about equipment service will go here.</p>
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            `;
-    }
+    <section id="customer" class="section" style="display: none">
+        <section class="container-fluid">
+            <div style="position: absolute; height: 250px; width: 47vw; left: 5vw; top: 100px; margin-top: 10px;" class="bg-light">
 
-    function showAuthService() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Auth Service</h1>
-                <p>Details about authentication service will go here.</p>
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            `;
-    }
+                <label style="left: 1.5vw; position: absolute" class="fw-bold text-black">Search Customer</label>
+                <input type="text" class="form-control" id="serch-inp-cus" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+                <!--            <button class="btn btn-outline-secondary" type="button" id="serch-btn-cus" style="top: 25px; position: absolute; left: 22vw; height: 30px">Search</button>-->
 
-    function showVehicleService() {
-        document.getElementById('mainContent').innerHTML = `
-                <h1>Vehicle Service</h1>
-                <p>Details about vehicle service will go here.</p>
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            `;
-    }
-</script>
+                <button type="button" class="btn btn-outline-primary" id="serch-btn-cus"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 25px; position: absolute; left: 22vw; ">
+                    Search Customer
+                </button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+                <label style="left: 1.5vw; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Customer Id</label>
+                <input type="text" class="form-control" id="serch-cus-id" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 25.5vw; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Customer Name</label>
+                <input type="text" class="form-control" id="serch-cus-name" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 20vw; left: 25.5vw; height: 30px">
+
+                <label style="left: 1.5vw; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Address</label>
+                <input type="text" class="form-control" id="serch-cus-address" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 25.5vw; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Salary</label>
+                <input type="text" class="form-control" id="serch-cus-salary" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 20vw; left: 25.5vw; height: 30px">
+
+                <!--            <button type="button" class="btn btn-warning" id="btn-update-cus" style="top: 200px; left: 33vw; position: absolute; height: 30px; color: white;">Update</button>-->
+                <!--            <button type="button" class="btn btn-danger" id="btn-remove-cus" style="top: 200px; left: 40vw; position: absolute; height: 30px">Remove</button>-->
+
+                <button type="button" class="btn btn-primary" id="btn-update-cus"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 200px; width: 6vw; left: 33vw; position: absolute;">
+                    Update
+                </button>
+
+
+                <button type="button" class="btn btn-danger" id="btn-remove-cus"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 200px; top: 200px; width: 6vw; left: 39.5vw; position: absolute;">
+                    Remove
+                </button>
+
+            </div>
+        </section>
+
+        <section class="container-fluid">
+            <div style="width: 32vw; height: 250px; position: absolute; right: 10vw; top: 100px; margin: 10px" class="bg-light" >
+                <p CLASS="fw-bold" style="position: absolute; right: 150px">Save Customer</p>
+
+                <label style="left: 1vw; position: absolute; top: 20px; z-index: 100; width: 200px;" class="fw-bold text-black">ID</label>
+                <input type="text" id="add-inp-cusId" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; width: 20vw; left: 1vw; height: 30px">
+
+                <label style="left: 1vw; position: absolute; top: 70px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
+                <input type="text" id="add-inp-cusName" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 90px; position: absolute; width: 20vw; left: 1vw; height: 30px">
+
+                <label style="left: 1vw; position: absolute; top: 120px; z-index: 100; width: 200px;" class="fw-bold text-black">Address</label>
+                <input type="text" id="add-inp-cusAddress" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 140px; position: absolute; width: 20vw; left: 1vw; height: 30px">
+
+                <label style="left: 1vw; position: absolute; top: 168px; z-index: 100; width: 200px;" class="fw-bold text-black">Salary</label>
+                <input type="text" id="add-inp-cusSalary" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 188px; position: absolute; width: 20vw; left: 1vw; height: 30px">
+
+                <!--            <input class="btn btn-primary" id="add-btn-cus" type="button" value="Submit" style="top: 215px; right: 2vw; position: absolute; height: 30px; text-align: center">-->
+
+                <button type="button" class="btn btn-success" id="add-btn-cus"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; top: 215px; right: 2vw; width: 7vw; position: absolute;">
+                    Submit
+                </button>
+
+            </div>
+        </section>
+
+        <section>
+            <div style="width: 90vw; height: 38vh; bottom: 10px; position: absolute; left: 5vw" class="bg-light" >
+
+                <!--            cus-table-->
+
+                <table class="table table-light table-striped" id="cus-table" style="height: 200px">
+                    <thead>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                    ...
+                    </thead>
+                    <tbody id="tbl-value">
+                    <tr class="table-active">
+                        <td class="tbl-col-id"></td>
+                        <td class="tbl-col-name"></td>
+                        <td class="tbl-col-address"></td>
+                        <td class="tbl-col-salary">
+                    </tr>
+
+                    </tbody>
+                </table>
+                <!--            ==============================-->
+                <!--            <table class="table" id="cus-table">-->
+                <!--                <thead class="table-dark">-->
+
+                <!--                <th>ID</th>-->
+                <!--                <th>Name</th>-->
+                <!--                <th>Address</th>-->
+                <!--                <th>Salary</th>-->
+
+                <!--                </thead>-->
+                <!--                <tbody id="tbl-value">-->
+                <!--                <tr>-->
+                <!--                    <td class="tbl-col-id"></td>-->
+                <!--                    <td class="tbl-col-name"></td>-->
+                <!--                    <td class="tbl-col-address"></td>-->
+                <!--                    <td class="tbl-col-salary"></td>-->
+                <!--                </tr>-->
+                <!--                </tbody>-->
+                <!--            </table>-->
+
+            </div>
+        </section>
+
+    </section>
+
+    <section id="item" class="section" style="display: none">
+        <section class="container-fluid">
+            <div style="position: absolute; height: 40vh; width: 46vw; left: 10vw; top: 100px; margin-top: 10px;" class="bg-light">
+
+                <label style="left: 1.5vw; position: absolute" class="fw-bold text-black">Search Items</label>
+                <input type="text" id="serch-inp-item" class="form-control" placeholder="Customer Id" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 25px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+                <!--                <button class="btn btn-outline-secondary"  type="button" id="itm-serch-btn" style="top: 25px; position: absolute; left: 22vw; height: 30px">Search</button>-->
+
+                <button type="button" class="btn btn-outline-primary" id="itm-serch-btn"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 25px; position: absolute; left: 22vw;">
+                    Search Customer
+                </button>
+                <label style="left: 1.5vw; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
+                <input type="text" id="s-item-inp-code" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 25.5vw; position: absolute; top: 75px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
+                <input type="text" id="s-item-inp-name" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 100px; position: absolute; width: 20vw; left: 25.5vw; height: 30px">
+
+                <label style="left: 1.5vw; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Quantity</label>
+                <input type="text" class="form-control" id="s-item-inp-qty" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 25.5vw; position: absolute; top: 135px; z-index: 100; width: 200px;" class="fw-bold text-black">Price</label>
+                <input type="text" class="form-control" id="s-item-inp-price" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 160px; position: absolute; width: 20vw; left: 25.5vw; height: 30px">
+
+                <!--                <button type="button" class="btn btn-warning" id="btn-update-item" style="top: 200px; left: 29vw; position: absolute; height: 5vh; color: white;">Update</button>-->
+                <!--                <button type="button" class="btn btn-danger" id="btn-remove-item" style="top: 200px; left: 37vw; position: absolute; height: 5vh">Remove</button>-->
+
+                <button type="button" class="btn btn-primary" id="btn-update-item"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 200px; width: 6vw; left: 33vw; position: absolute;">
+                    Update
+                </button>
+
+                <button type="button" class="btn btn-danger" id="btn-remove-item"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;top: 200px; top: 200px; width: 6vw; left: 39.5vw; position: absolute;">
+                    Remove
+                </button>
+
+            </div>
+        </section>
+
+        <section class="container-fluid">
+            <div style="width: 31vw; height: 250px; position: absolute; right: 10vw; top: 100px; margin: 10px" class="bg-light" >
+                <p CLASS="fw-bold" style="position: absolute; right: 150px">Save ITEMS</p>
+
+                <label style="left: 1.5vw; position: absolute; top: 20px; z-index: 100; width: 200px;" class="fw-bold text-black">Code</label>
+                <input type="text" class="form-control" id="add-item-code" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 40px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 1.5vw; position: absolute; top: 70px; z-index: 100; width: 200px;" class="fw-bold text-black">Name</label>
+                <input type="text" class="form-control" id="add-item-name" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 90px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 1.5vw; position: absolute; top: 120px; z-index: 100; width: 200px;" class="fw-bold text-black">Quantity</label>
+                <input type="text" class="form-control" id="add-item-qty" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 140px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <label style="left: 1.5vw; position: absolute; top: 168px; z-index: 100; width: 200px;" class="fw-bold text-black">Price</label>
+                <input type="text" class="form-control" id="add-item-price" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" style="top: 188px; position: absolute; width: 20vw; left: 1.5vw; height: 30px">
+
+                <!--                <input class="btn btn-primary" id="btn-add-item" type="submit" value="Submit" style="top: 215px; right: 2vw; position: absolute; height: 30px">-->
+
+                <button type="button" class="btn btn-success" id="btn-add-item"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; top: 215px; right: 2vw; width: 7vw; position: absolute;">
+                    Submit
+                </button>
+
+            </div>
+        </section>
+
+        <section>
+            <div style="width: 80vw; height: 38vh; bottom: 10px; position: absolute; left: 10vw" class="bg-light" >
+
+                <table class="table table-light table-striped" id="item-table" style=" height: 200px;">
+                    <thead>
+
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+
+                    </thead>
+                    <tbody id="item-tbl-value">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+    </section>
+
+    <!-- JavaScript to toggle sections -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select the buttons and sections
+            const cropButton = document.querySelector(".nav-link[href='widget.html']");
+            const staffButton = document.querySelector(".nav-link[href='form.html']");
+            const cropSection = document.getElementById("customer");
+            const staffSection = document.getElementById("item");
+
+            // Function to hide all sections
+            function hideAllSections() {
+                cropSection.style.display = "none";
+                staffSection.style.display = "none";
+            }
+
+            // Show the crop section when the Crop button is clicked
+            cropButton.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                hideAllSections();
+                cropSection.style.display = "block";
+            });
+
+            // Show the staff section when the Staff button is clicked
+            staffButton.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                hideAllSections();
+                staffSection.style.display = "block";
+            });
+        });
+    </script>
+
 </body>
-
-</html>
