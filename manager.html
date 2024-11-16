@@ -49,8 +49,8 @@
             <a href="#" class="nav-item nav-link" id="field-button"><i class="fa fa-laptop me-2"></i>Field</a>
             <a href="#" class="nav-item nav-link" id="crop-button"><i class="fa fa-th me-2"></i>Crop</a>
             <a href="#" class="nav-item nav-link" id="staff-button"><i class="fa fa-keyboard me-2"></i>Staff</a>
-            <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Log Monitoring</a>
-            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Vehicle</a>
+            <a href="#" class="nav-item nav-link" id="LogMonitoring-button"><i class="fa fa-table me-2"></i>Log Monitoring</a>
+            <a href="#" class="nav-item nav-link" id="vehicle-button"><i class="fa fa-chart-bar me-2"></i>Vehicle</a>
         </div>
     </nav>
 </div>
@@ -288,6 +288,86 @@
         </div>
     </section>
 
+    <!--vehicle Section------------------------------->
+
+    <section id="vehicle-section" class="section" style="display: none;">
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Vehicle Form</h6>
+                        <form>
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label">Vehicle Code</label>
+                                <input type="text" class="form-control" id="vehicle-code"
+                                       aria-describedby="vehicleId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="License-plate-number" class="form-label">License plate number</label>
+                                <input type="text" class="form-control" id="License-plate-number"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Vehicle category</label>
+                                <div class="form-floating mb-3">
+
+                                    <select class="form-select" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Passenger car</option>
+                                        <option value="2">Goods vehicle</option>
+                                        <option value="3">Long vehicle</option>
+                                    </select>
+                                    <label for="floatingSelect">Vehicle category</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Fuel type</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Petrol</option>
+                                    <option value="2">Diesel</option>
+                                    <option value="3">Supper Diesel</option>
+                                </select>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4"></h6>
+                        <form>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Status</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Available</option>
+                                    <option value="2">Not Available</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label">Allocate Driver</label>
+                                <input type="text" class="form-control" id="Allocate-Driver"
+                                       aria-describedby="vehicleId">
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                          id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Remark</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--sections End----------->
+
     <!-- JavaScript to toggle sections -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -295,16 +375,19 @@
             const cropButton = document.getElementById("crop-button");
             const staffButton = document.getElementById("staff-button");
             const fieldButton = document.getElementById("field-button");
+            const vehicleButton = document.getElementById("vehicle-button");
 
             const cropSection = document.getElementById("crop-section");
             const staffSection = document.getElementById("staff-section");
             const fieldSection = document.getElementById("field-section");
+            const vehicleSection = document.getElementById("vehicle-section");
 
             // Function to hide all sections
             function hideAllSections() {
                 cropSection.style.display = "none";
                 staffSection.style.display = "none";
                 fieldSection.style.display = "none";
+                vehicleSection.style.display = "none";
             }
 
             // Show the crop section when the Crop button is clicked
@@ -327,6 +410,14 @@
                 hideAllSections();
                 fieldSection.style.display = "block";
             });
+
+            // Show the vehicle section when the Field button is clicked
+            vehicleButton.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                hideAllSections();
+                vehicleSection.style.display = "block";
+            });
+
         });
     </script>
 
