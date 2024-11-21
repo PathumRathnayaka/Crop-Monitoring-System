@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>Crop Monitoring</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -76,214 +76,677 @@
     <!-- Navbar End -->
 
     <!-- Field Section -->
-    <section id="field-section" class="section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 bg-light p-4" style="border-radius: 5px;">
-                    <h4 class="fw-bold">Manage Fields</h4>
+    <section id="field-section" class="section" style="display: none;">
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Field Form</h6>
+                        <form>
 
-                    <label for="fieldCode" class="fw-bold text-black">Field Code</label>
-                    <input type="text" id="fieldCode" class="form-control mb-3" placeholder="Field Code">
+                            <div class="mb-3">
+                                <label for="field-code" class="form-label">Field Code</label>
+                                <input type="text" class="form-control" id="field-code"
+                                       aria-describedby="vehicleId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="field-name" class="form-label">Field Name</label>
+                                <input type="text" class="form-control" id="field-name"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="field-name" class="form-label">Field Location</label>
+                                <input type="text" class="form-control" id="field-Location"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Crop</label>
+                                <div class="form-floating mb-3">
 
-                    <label for="fieldName" class="fw-bold text-black">Field Name</label>
-                    <input type="text" id="fieldName" class="form-control mb-3" placeholder="Field Name">
+                                    <select class="form-select" id="croplist"
+                                            aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Passenger car</option>
+                                        <option value="2">Goods vehicle</option>
+                                        <option value="3">Long vehicle</option>
+                                    </select>
+                                    <label for="floatingSelect">Vehicle category</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Staff</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Petrol</option>
+                                    <option value="2">Diesel</option>
+                                    <option value="3">Supper Diesel</option>
+                                </select>
+                            </div>
 
-                    <label for="fieldLocation" class="fw-bold text-black">Field Location (Coordinates)</label>
-                    <input type="text" id="fieldLocation" class="form-control mb-3" placeholder="Latitude, Longitude">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4"></h6>
+                        <form>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Status</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Available</option>
+                                    <option value="2">Not Available</option>
 
-                    <label for="extentSize" class="fw-bold text-black">Extent Size of the Field (ha)</label>
-                    <input type="number" id="extentSize" class="form-control mb-3" placeholder="Extent Size (ha)" step="0.01">
+                                </select>
+                            </div>
+                            <label for="fieldImage1" class="fw-bold text-black">Field Image</label>
+                            <input type="file" id="fieldImage1" class="form-control mb-3" accept="image/*">
 
-                    <label for="crops" class="fw-bold text-black">Crops</label>
-                    <input type="text" id="crops" class="form-control mb-3" placeholder="Crops (comma-separated)">
+                            <label for="fieldImage2" class="fw-bold text-black">Field Image 2</label>
+                            <input type="file" id="fieldImage2" class="form-control mb-3" accept="image/*">
 
-                    <label for="staff" class="fw-bold text-black">Staff</label>
-                    <input type="text" id="staff" class="form-control mb-3" placeholder="Staff (comma-separated)">
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label"></label><br>
+                                <button type="button" class="btn btn-outline-primary m-2">Save</button>
+                                <button type="button" class="btn btn-outline-secondary m-2">Update</button>
+                                <button type="button" class="btn btn-outline-danger m-2">Delete</button>
 
-                    <label for="fieldImage1" class="fw-bold text-black">Field Image 1</label>
-                    <input type="file" id="fieldImage1" class="form-control mb-3" accept="image/*">
+                            </div>
 
-                    <label for="fieldImage2" class="fw-bold text-black">Field Image 2</label>
-                    <input type="file" id="fieldImage2" class="form-control mb-3" accept="image/*">
-
-                    <button type="button" class="btn btn-primary" id="btn-update-field" onclick="updateField()">Update</button>
-                    <button type="button" class="btn btn-danger" id="btn-remove-field" onclick="removeField()">Remove</button>
-                    <button type="button" class="btn btn-success" id="btn-add-field" onclick="addField()">Submit</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="col-md-6 bg-light p-4" style="border-radius: 5px; margin-left: 20px;">
-                    <h4 class="fw-bold">Fields List</h4>
-                    <table class="table table-light table-striped" id="field-table">
-                        <thead>
-                        <tr>
-                            <th>Field Code</th>
-                            <th>Field Name</th>
-                            <th>Location</th>
-                            <th>Extent Size (ha)</th>
-                            <th>Crops</th>
-                            <th>Staff</th>
-                        </tr>
-                        </thead>
-                        <tbody id="field-tbl-body">
-                        <!-- Field entries will be added here -->
-                        </tbody>
-                    </table>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title m-b-0">Table of Vehicle Service</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox m-b-20">
+                                                <input type="checkbox" id="mainCheckbox2">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <th scope="col">Vehicle code</th>
+                                        <th scope="col">License plate number</th>
+                                        <th scope="col">Vehicle category</th>
+                                        <th scope="col">Fuel type</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Allocated Drivers</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="customtable">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Crop Section -->
     <section id="crop-section" class="section" style="display: none;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 bg-light p-4" style="border-radius: 5px;">
-                    <h4 class="fw-bold">Manage Crops</h4>
-                    <label for="crop-select" class="fw-bold text-black">Select Crop Code</label>
-                    <select id="crop-select" class="form-select mb-3" onchange="populateFields()">
-                        <option value="">Select Crop</option>
-                        <!-- Options will be populated dynamically -->
-                    </select>
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Crop Form</h6>
+                        <form>
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label">Crop code</label>
+                                <input type="text" class="form-control" id="Crop-code"
+                                       aria-describedby="vehicleId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="License-plate-number" class="form-label">Crop common name</label>
+                                <input type="text" class="form-control" id="Crop-common-name"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="License-plate-number" class="form-label">Crop scientific name </label>
+                                <input type="text" class="form-control" id="Crop-scientific-name "
+                                       aria-describedby="emailHelp">
+                            </div>
 
-                    <label for="cropCode" class="fw-bold text-black">Crop Code</label>
-                    <input type="text" id="cropCode" class="form-control mb-3" placeholder="Crop Code" readonly>
 
-                    <label for="cropCommonName" class="fw-bold text-black">Crop Common Name</label>
-                    <input type="text" id="cropCommonName" class="form-control mb-3" placeholder="Crop Common Name">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4"></h6>
+                        <form>
+                            <div>
+                                <label for="crop-Image" class="fw-bold text-black">Crop Image</label>
+                                <input type="file" id="crop-Image" class="form-control mb-3" accept="image/*">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Category" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="Category"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label"></label><br>
+                                <button type="button" class="btn btn-outline-primary m-2">Save</button>
+                                <button type="button" class="btn btn-outline-secondary m-2">Update</button>
+                                <button type="button" class="btn btn-outline-danger m-2">Delete</button>
 
-                    <label for="cropScientificName" class="fw-bold text-black">Crop Scientific Name</label>
-                    <input type="text" id="cropScientificName" class="form-control mb-3" placeholder="Crop Scientific Name">
+                            </div>
 
-                    <label for="cropImage" class="fw-bold text-black">Crop Image</label>
-                    <input type="file" id="cropImage" class="form-control mb-3" accept="image/*">
-
-                    < label for="category" class="fw-bold text-black">Category</label>
-                    <input type="text" id="category" class="form-control mb-3" placeholder="Category">
-
-                    <label for="cropSeason" class="fw-bold text-black">Crop Season</label>
-                    <input type="text" id="cropSeason" class="form-control mb-3" placeholder="Crop Season">
-
-                    <label for="field" class="fw-bold text-black">Field</label>
-                    <input type="text" id="field" class="form-control mb-3" placeholder="Field">
-
-                    <button type="button" class="btn btn-primary" id="btn-update" onclick="updateCrop()">Update</button>
-                    <button type="button" class="btn btn-danger" id="btn-remove" onclick="removeCrop()">Remove</button>
-                    <button type="button" class="btn btn-success" id="btn-add" onclick="addCrop()">Submit</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div class="col-md-6 bg-light p-4" style="border-radius: 5px; margin-left: 20px;">
-                    <h4 class="fw-bold">Crops List</h4>
-                    <table class="table table-light table-striped" id="crop-table">
-                        <thead>
-                        <tr>
-                            <th>Crop Code</th>
-                            <th>Common Name</th>
-                            <th>Scientific Name</th>
-                            <th>Category</th>
-                            <th>Season</th>
-                            <th>Field</th>
-                        </tr>
-                        </thead>
-                        <tbody id="crop-tbl-body">
-                        <!-- Crop entries will be added here -->
-                        </tbody>
-                    </table>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title m-b-0">Table of Crop Service</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox m-b-20">
+                                                <input type="checkbox" id="cropCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <th scope="col">Vehicle code</th>
+                                        <th scope="col">License plate number</th>
+                                        <th scope="col">Vehicle category</th>
+                                        <th scope="col">Fuel type</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Allocated Drivers</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="customtable">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Staff Section -->
     <section id="staff-section" class="section" style="display: none;">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 bg-light p-4" style="border-radius: 5px;">
-                    <h4 class="fw-bold">Manage Staff</h4>
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Staff Form</h6>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nic" class="form-label">NIC</label>
+                                <input type="text" class="form-control" id="nic"
+                                       aria-describedby="vehicleId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="first-Name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="first-Name"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="last-Name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="last-Name"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div>
+                                <label for="designation" class="form-label">Designation</label>
+                                <div class="form-floating mb-3">
 
-                    <label for="staffId" class="fw-bold text-black">ID</label>
-                    <input type="text" id="staffId" class="form-control mb-3" placeholder="Staff ID">
-
-                    <label for="firstName" class="fw-bold text-black">First Name</label>
-                    <input type="text" id="firstName" class="form-control mb-3" placeholder="First Name">
-
-                    <label for="lastName" class="fw-bold text-black">Last Name</label>
-                    <input type="text" id="lastName" class="form-control mb-3" placeholder="Last Name">
-
-                    <label for="designation" class="fw-bold text-black">Designation</label>
-                    <select id="designation" class="form-select mb-3">
-                        <option value="">Select Designation</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Field Officer">Field Officer</option>
-                        <option value="Agronomist">Agronomist</option>
-                        <option value="Technician">Technician</option>
-                        <option value="Laborer">Laborer</option>
-                    </select>
-
-                    <label for="gender" class="fw-bold text-black">Gender</label>
-                    <select id="gender" class="form-select mb-3">
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-
-                    <label for="joinedDate" class="fw-bold text-black">Joined Date</label>
-                    <input type="date" id="joinedDate" class="form-control mb-3">
-
-                    <label for="dob" class="fw-bold text-black">Date of Birth</label>
-                    <input type="date" id="dob" class="form-control mb-3">
-
-                    <label for="addressLine1" class="fw-bold text-black">Address Line 01</label>
-                    <input type="text" id="addressLine1" class="form-control mb-3" placeholder="Address Line 01">
-
-                    <label for="addressLine2" class="fw-bold text-black">Address Line 02</label>
-                    <input type="text" id="addressLine2" class="form-control mb-3" placeholder="Address Line 02">
-
-                    <label for="addressLine3" class="fw-bold text-black">Address Line 03</label>
-                    <input type="text" id=" addressLine3" class="form-control mb-3" placeholder="Address Line 03">
-
-                    <label for="addressLine4" class="fw-bold text-black">Address Line 04</label>
-                    <input type="text" id="addressLine4" class="form-control mb-3" placeholder="Address Line 04">
-
-                    <label for="addressLine5" class="fw-bold text-black">Address Line 05</label>
-                    <input type="text" id="addressLine5" class="form-control mb-3" placeholder="Address Line 05">
-
-                    <label for="contactNo" class="fw-bold text-black">Contact No.</label>
-                    <input type="text" id="contactNo" class="form-control mb-3" placeholder="Contact No.">
-
-                    <label for="email" class="fw-bold text-black">Email</label>
-                    <input type="email" id="email" class="form-control mb-3" placeholder="Email">
-
-                    <label for="role" class="fw-bold text-black">Role</label>
-                    <select id="role" class="form-select mb-3">
-                        <option value="">Select Role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="User ">User </option>
-                        <option value="Viewer">Viewer</option>
-                    </select>
-
-                    <label for="fieldList" class="fw-bold text-black">Field</label>
-                    <select id="fieldList" class="form-select mb-3">
-                        <option value="">Select Field</option>
-                        <option value="Field1">Field 1</option>
-                        <option value="Field2">Field 2</option>
-                        <option value="Field3">Field 3</option>
-                        <option value="Field4">Field 4</option>
-                    </select>
-
-                    <label for="vehicleList" class="fw-bold text-black">Vehicle</label>
-                    <select id="vehicleList" class="form-select mb-3">
-                        <option value="">Select Vehicle</option>
-                        <option value="Vehicle1">Vehicle 1</option>
-                        <option value="Vehicle2">Vehicle 2</option>
-                        <option value="Vehicle3">Vehicle 3</option>
-                        <option value="Vehicle4">Vehicle 4</option>
-                    </select>
-
-                    <button type="button" class="btn btn-primary" id="btn-update-staff" onclick="updateStaff()">Update</button>
-                    <button type="button" class="btn btn-danger" id="btn-remove-staff" onclick="removeStaff()">Remove</button>
-                    <button type="button" class="btn btn-success" id="btn-add-staff" onclick="addStaff()">Submit</button>
+                                    <select class="form-select" id="designation"
+                                            aria-label="Floating label select example">
+                                        <option selected>Open this select menu</option>
+                                        <option value="1">Manager</option>
+                                        <option value="2">Field Officer</option>
+                                        <option value="3">Agronomist</option>
+                                        <option value="4">Technician</option>
+                                        <option value="5">Laborer</option>
+                                    </select>
+                                    <label for="floatingSelect">Designation category</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Gender</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="joined-Date" class="form-label">Joined Date</label>
+                                <input type="text" class="form-control" id="joined-Date"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dob" class="form-label">Date of Birth</label>
+                                <input type="text" class="form-control" id="dob"
+                                       aria-describedby="emailHelp">
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4"></h6>
+                        <form>
+
+                            <div class="mb-3">
+                                <label for="Address01" class="form-label">Address Line 01</label>
+                                <input type="text" class="form-control" id="Address01"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Address02" class="form-label">Address Line 02</label>
+                                <input type="text" class="form-control" id="Address02"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Address03" class="form-label">Address Line 03</label>
+                                <input type="text" class="form-control" id="Address03"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Address04" class="form-label">Address Line 04</label>
+                                <input type="text" class="form-control" id="Address04"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Address05" class="form-label">Address Line 05</label>
+                                <input type="text" class="form-control" id="Address05"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactNo" class="form-label">Contact No:</label>
+                                <input type="text" class="form-control" id="contactNo"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email"
+                                       aria-describedby="emailHelp">
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Role</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">User</option>
+                                    <option value="3">Viewer</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Field</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Field 1</option>
+                                    <option value="2">Field 2</option>
+                                    <option value="3">Field 3</option>
+
+                                </select>
+                            </div>
+                            <div>
+                                <label for="License-plate-number" class="form-label">Vehicle</label>
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Vehicle 1</option>
+                                    <option value="2">Vehicle 2</option>
+                                    <option value="3">Vehicle 3</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="vehicle-code" class="form-label"></label><br>
+                                <button type="button" class="btn btn-outline-primary m-2">Save</button>
+                                <button type="button" class="btn btn-outline-secondary m-2">Update</button>
+                                <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title m-b-0">Table of Vehicle Service</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox m-b-20">
+                                                <input type="checkbox" id="mainCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <th scope="col">Vehicle code</th>
+                                        <th scope="col">License plate number</th>
+                                        <th scope="col">Vehicle category</th>
+                                        <th scope="col">Fuel type</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Allocated Drivers</th>
+                                        <th scope="col">Remarks</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="customtable">
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <label class="customcheckbox">
+                                                <input type="checkbox" class="listCheckbox">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <td>C26</td>
+                                        <td>DVC 6786</td>
+                                        <td>Cab</td>
+                                        <td>Petrol</td>
+                                        <td>Available</td>
+                                        <td>YES</td>
+                                        <td>No Remarks</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
