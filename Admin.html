@@ -3,8 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/datedropper.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/datedropper.js"></script>
 </head>
 <body>
+<style>
+  body{background-color: #AA00FF}.container{margin-top: 200px}.btn:hover{color: #fff}.input-text:focus{box-shadow: 0px 0px 0px;border-color: #f8c146;outline: 0px}.input-group{width: 204px}.form-control{border: 1px solid #ed433e}.form-control[readonly]{background-color: #ffffff;opacity: 1}.btn-outline-warning{color: #F44336 !important;background-color: #fff;background-image: none;border-color: #ed433e !important}
+</style>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="input-group mb-3"> <input type="text" class="form-control input-text">
+        <div class="input-group-append"> <button class="btn btn-outline-warning btn-lg" type="button"><i class="fa fa-calendar"></i></button> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
 
+    $( "input" ).dateDropper({
+      animate: true,
+      init_animation: "fadein",
+      format: "m/d/Y",
+      lang: "en",
+      lock: false,
+      minYear: 1970,
+      yearsRange: 10,
+
+      //CSS PRIOPRIETIES
+      dropPrimaryColor: "#01CEFF",
+      dropTextColor: "#333333",
+      dropBackgroundColor: "#FFFFFF",
+      dropBorder: "1px solid #08C",
+      dropBorderRadius: 8,
+      dropShadow: "0 0 10px 0 rgba(0, 136, 204, 0.45)",
+      dropWidth: 124,
+      dropTextWeight: 'bold'
+    });
+
+  });
+</script>
 </body>
 </html>
