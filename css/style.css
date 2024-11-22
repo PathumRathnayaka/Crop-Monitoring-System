@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --primary: #27ae60;
     --light: #F3F6F9;
     --dark: #191C24;
 }
@@ -144,7 +144,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
+    background: #60a860;
     border-radius: 40px;
 }
 
