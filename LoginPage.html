@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #5f8c63;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      display: flex;
+      width: 70%;
+      max-width: 900px;
+      background-color: #2e2e3e;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-image {
+      flex: 1;
+      background-image: url('https://img.freepik.com/free-photo/green-tea-bud-leaves-green-tea-plantations-morning_335224-955.jpg?t=st=1733130720~exp=1733134320~hmac=9de38d2502867ee419b1c832c626169156dbce2d50f6580cf85e4f5866d89faf&w=740'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      color: #9c9c9c;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .login-image h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .login-image p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .login-form {
+      flex: 1;
+      padding: 40px;
+      background-color: #efefef;
+      color: #292929;
+    }
+
+    .login-form h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      background-color: #d1d1d5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #04aa6d;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #4a4ad6;
+    }
+
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .social-buttons button {
+      background-color: transparent;
+      border: 1px solid #04aa6d;
+      color: #04aa6d;
+      border-radius: 5px;
+      width: 48%;
+    }
+
+    .social-buttons button:hover {
+      background-color: rgb(4, 170, 109);
+    }
+
+    .terms {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="login-container">
+  <!-- Left Image Section -->
+  <div class="login-image">
+    <h1>Cultivating Growth,<br>Streamlining Success</h1>
+    <p>Back to website &rarr;</p>
+  </div>
+
+  <!-- Right Login Form -->
+  <div class="login-form">
+    <h2>Create an Account</h2>
+    <p>Don't have an account? <a href="#" style="color: #5e5ef0;">Sign up</a></p>
+    <form>
+
+        <div class="col-12">
+          <select class="form-control">
+            <option value="" disabled selected>Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
+
+      <input type="email" class="form-control " placeholder="Email">
+      <div class="input-group">
+        <input type="password" class="form-control" placeholder="Enter your password">
+        <!--<button class="btn btn-outline-light" type="button">
+          <i class="bi bi-eye"></i>
+        </button>-->
+      </div>
+      <div class="form-check mt-3">
+
+        <label class="form-check-label terms" >
+          <a href="#" style="color: #5e5ef0;">Forgot Password?</a>
+        </label>
+      </div>
+      <button class="btn btn-primary w-100 mt-4">Log in</button>
+    </form>
+    <div class="login-options">
+      <hr class="flex-grow-1">
+      <span>Login Page</span>
+      <hr class="flex-grow-1">
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
