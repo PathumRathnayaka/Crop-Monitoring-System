@@ -17,7 +17,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icon Font Stylesheet -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Libraries Stylesheet -->
@@ -60,12 +61,12 @@
         </div>
       </div>
       <div class="navbar-nav w-100">
-        <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-        <a href="#" class="nav-item nav-link" id="field-button"><i class="fa fa-laptop me-2"></i>Field</a>
-        <a href="#" class="nav-item nav-link" id="crop-button"><i class="fa fa-th me-2"></i>Crop</a>
-        <a href="#" class="nav-item nav-link" id="staff-button"><i class="fa fa-keyboard me-2"></i>Staff</a>
+        <a href="#" class="nav-item nav-link active"id="dashboard-button"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+        <a href="#" class="nav-item nav-link" id="field-button"><i class="fas fa-seedling"></i>Field</a>
+        <a href="#" class="nav-item nav-link" id="crop-button"><i class="fas fa-leaf"></i></i>Crop</a>
+        <a href="#" class="nav-item nav-link" id="staff-button"><i class="fas fa-users"></i>Staff</a>
         <a href="#" class="nav-item nav-link" id="LogMonitoring-button"><i class="fa fa-table me-2"></i>Log Monitoring</a>
-        <a href="#" class="nav-item nav-link" id="vehicle-button"><i class="fa fa-chart-bar me-2"></i>Vehicle</a>
+        <a href="#" class="nav-item nav-link" id="vehicle-button"><i class="fas fa-truck"></i>Vehicle</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
           <div class="dropdown-menu bg-transparent border-0">
@@ -103,7 +104,7 @@
           <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
             <a href="#" class="dropdown-item">
               <div class="d-flex align-items-center">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle" src="css/img/pathum%202.jpg" alt="" style="width: 40px; height: 40px;">
                 <div class="ms-2">
                   <h6 class="fw-normal mb-0">message from crop</h6>
                   <small>15 minutes ago</small>
@@ -113,7 +114,7 @@
             <hr class="dropdown-divider">
             <a href="#" class="dropdown-item">
               <div class="d-flex align-items-center">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle" src="css/img/pathum%202.jpg" alt="" style="width: 40px; height: 40px;">
                 <div class="ms-2">
                   <h6 class="fw-normal mb-0">message from crop</h6>
                   <small>15 minutes ago</small>
@@ -123,7 +124,7 @@
             <hr class="dropdown-divider">
             <a href="#" class="dropdown-item">
               <div class="d-flex align-items-center">
-                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <img class="rounded-circle" src="css/img/pathum%202.jpg" alt="" style="width: 40px; height: 40px;">
                 <div class="ms-2">
                   <h6 class="fw-normal mb-0">message from crop</h6>
                   <small>15 minutes ago</small>
@@ -176,6 +177,73 @@
 
     <!-- Form Start -->
     <div class="container-fluid pt-4 px-4">
+
+      <section id="dashboard-section" class="section" style="display: none;">
+        <div class="container-fluid pt-4 px-4">
+          <div class="row g-4">
+            <div class="col-sm-6 col-xl-3">
+              <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa-solid fa-seedling"></i>
+                <div class="ms-3">
+                  <p class="mb-2">Crop</p>
+                  <h6 class="mb-0">1234</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa-solid fa-seedling"></i>
+                <div class="ms-3">
+                  <p class="mb-2">Total Field</p>
+                  <h6 class="mb-0">1234</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa-solid fa-seedling"></i>
+                <div class="ms-3">
+                  <p class="mb-2">Availble vehicle</p>
+                  <h6 class="mb-0">234</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa-solid fa-seedling"></i>
+                <div class="ms-3">
+                  <p class="mb-2">Staff</p>
+                  <h6 class="mb-0">234</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid pt-4 px-4">
+          <div class="row g-4">
+            <div class="col-sm-12 col-xl-6">
+              <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <h6 class="mb-0">Crop growth</h6>
+                  <a href="">Show All</a>
+                </div>
+                <canvas id="worldwide-sales"></canvas>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xl-6">
+              <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <h6 class="mb-0">Staff</h6>
+                  <a href="">Show All</a>
+                </div>
+                <canvas id="salse-revenue"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section id="field-section" class="section" style="display: none;">
         <div class="container-fluid pt-4 px-4">
           <div class="row g-4">
@@ -199,20 +267,7 @@
                     <input type="text" class="form-control" id="field-Location"
                            aria-describedby="emailHelp">
                   </div>
-                  <div>
-                    <label for="License-plate-number" class="form-label">Crop</label>
-                    <div class="form-floating mb-3">
 
-                      <select class="form-select" id="croplist"
-                              aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">Passenger car</option>
-                        <option value="2">Goods vehicle</option>
-                        <option value="3">Long vehicle</option>
-                      </select>
-                      <label for="floatingSelect">Vehicle category</label>
-                    </div>
-                  </div>
 
 
                 </form>
@@ -222,24 +277,13 @@
               <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4"></h6>
                 <form>
-                  <div>
-                    <label for="License-plate-number" class="form-label">Staff</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Petrol</option>
-                      <option value="2">Diesel</option>
-                      <option value="3">Supper Diesel</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="License-plate-number" class="form-label">Status</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Available</option>
-                      <option value="2">Not Available</option>
 
-                    </select>
+                  <div class="mb-3">
+                    <label for="field-name" class="form-label">Field Size</label>
+                    <input type="text" class="form-control" id="field-Size"
+                           aria-describedby="emailHelp">
                   </div>
+
                   <label for="fieldImage1" class="fw-bold text-black">Field Image</label>
                   <input type="file" id="fieldImage1" class="form-control mb-3" accept="image/*">
 
@@ -248,9 +292,9 @@
 
                   <div class="mb-3">
                     <label for="vehicle-code" class="form-label"></label><br>
-                    <button type="button" class="btn btn-outline-primary m-2">Save</button>
-                    <button type="button" class="btn btn-outline-secondary m-2">Update</button>
-                    <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+                    <button type="button" id="saveButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteButton" class="btn btn-outline-danger m-2">Delete</button>
 
                   </div>
 
@@ -261,14 +305,15 @@
           </div>
         </div>
         <div>
-          <div class="container">
+          <div class="container mt-5">
 
 
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-body text-center">
-                    <h5 class="card-title m-b-0">Table of Vehicle Service</h5>
+                    <h5 class="card-title m-b-0">Table of Field
+                      Service</h5>
                   </div>
                   <div class="table-responsive">
                     <table class="table">
@@ -280,106 +325,18 @@
                             <span class="checkmark"></span>
                           </label>
                         </th>
-                        <th scope="col">Vehicle code</th>
-                        <th scope="col">License plate number</th>
-                        <th scope="col">Vehicle category</th>
-                        <th scope="col">Fuel type</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Allocated Drivers</th>
-                        <th scope="col">Remarks</th>
+                        <th scope="col">Field code</th>
+                        <th scope="col">field name</th>
+                        <th scope="col">field Location</th>
+                        <th scope="col">field Size</th>
+                        <th scope="col">Image 1</th>
+                        <th scope="col">Image 2</th>
+
                       </tr>
                       </thead>
                       <tbody class="customtable">
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
+
+
                       </tbody>
                     </table>
                   </div>
@@ -395,7 +352,7 @@
       <section id="crop-section" class="section" style="display: none;">
         <div class="container-fluid pt-4 px-4">
           <div class="row g-4">
-            <div class="col-sm-12 col-xl-6">
+            <div class="col-sm-12 col-xl-6 ">
               <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Crop Form</h6>
                 <form>
@@ -414,7 +371,11 @@
                     <input type="text" class="form-control" id="Crop-scientific-name "
                            aria-describedby="emailHelp">
                   </div>
-
+                  <div class="mb-3">
+                    <label for="Category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="Category"
+                           aria-describedby="emailHelp">
+                  </div>
 
                 </form>
               </div>
@@ -423,20 +384,28 @@
               <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4"></h6>
                 <form>
+
+                  <div class="mb-3">
+                    <label for="Category" class="form-label">Season</label>
+                    <input type="text" class="form-control" id="season"
+                           aria-describedby="emailHelp">
+                  </div>
+                  <div>
+                    <label for="field" class="form-label">Field</label>
+                    <select id="field-dropdown" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
                   <div>
                     <label for="crop-Image" class="fw-bold text-black">Crop Image</label>
                     <input type="file" id="crop-Image" class="form-control mb-3" accept="image/*">
                   </div>
-                  <div class="mb-3">
-                    <label for="Category" class="form-label">Category</label>
-                    <input type="text" class="form-control" id="Category"
-                           aria-describedby="emailHelp">
-                  </div>
+
                   <div class="mb-3">
                     <label for="vehicle-code" class="form-label"></label><br>
-                    <button type="button" class="btn btn-outline-primary m-2">Save</button>
-                    <button type="button" class="btn btn-outline-secondary m-2">Update</button>
-                    <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+                    <button type="button" id="saveCropButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateCropButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteCropButton" class="btn btn-outline-danger m-2">Delete</button>
 
                   </div>
 
@@ -447,14 +416,15 @@
           </div>
         </div>
         <div>
-          <div class="container">
+          <div class="container mt-5">
 
 
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-body text-center">
-                    <h5 class="card-title m-b-0">Table of Crop Service</h5>
+                    <h5 class="card-title m-b-0">Table of Crop
+                      Service</h5>
                   </div>
                   <div class="table-responsive">
                     <table class="table">
@@ -462,110 +432,23 @@
                       <tr>
                         <th>
                           <label class="customcheckbox m-b-20">
-                            <input type="checkbox" id="cropCheckbox">
+                            <input type="checkbox" id="mainCheckbox3">
                             <span class="checkmark"></span>
                           </label>
                         </th>
-                        <th scope="col">Vehicle code</th>
-                        <th scope="col">License plate number</th>
-                        <th scope="col">Vehicle category</th>
-                        <th scope="col">Fuel type</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Allocated Drivers</th>
-                        <th scope="col">Remarks</th>
+                        <th scope="col">Crop code</th>
+                        <th scope="col">common Name</th>
+                        <th scope="col">scientific Name</th>
+                        <th scope="col">category</th>
+                        <th scope="col">season</th>
+                        <th scope="col">field</th>
+                        <th scope="col">image</th>
+
                       </tr>
                       </thead>
-                      <tbody class="customtable">
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
+                      <tbody class="customtableCrop">
+
+
                       </tbody>
                     </table>
                   </div>
@@ -586,8 +469,8 @@
                 <h6 class="mb-4">Staff Form</h6>
                 <form>
                   <div class="mb-3">
-                    <label for="nic" class="form-label">NIC</label>
-                    <input type="text" class="form-control" id="nic"
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id"
                            aria-describedby="vehicleId">
                   </div>
                   <div class="mb-3">
@@ -629,21 +512,7 @@
                     <input type="text" class="form-control" id="joined-Date"
                            aria-describedby="emailHelp">
                   </div>
-                  <div class="mb-3">
-                    <label for="dob" class="form-label">Date of Birth</label>
-                    <input type="text" class="form-control" id="dob"
-                           aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                    <label for="contactNo" class="form-label">Contact No:</label>
-                    <input type="text" class="form-control" id="contactNo"
-                           aria-describedby="emailHelp">
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email"
-                           aria-describedby="emailHelp">
-                  </div>
+
                 </form>
               </div>
             </div>
@@ -653,31 +522,25 @@
                 <form>
 
                   <div class="mb-3">
-                    <label for="Address01" class="form-label">Address Line 01</label>
-                    <input type="text" class="form-control" id="Address01"
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="text" class="form-control" id="dob"
                            aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
-                    <label for="Address02" class="form-label">Address Line 02</label>
-                    <input type="text" class="form-control" id="Address02"
+                    <label for="Address" class="form-label">Address </label>
+                    <input type="text" class="form-control" id="Address"
                            aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
-                    <label for="Address03" class="form-label">Address Line 03</label>
-                    <input type="text" class="form-control" id="Address03"
+                    <label for="contact" class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="contact"
                            aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
-                    <label for="Address04" class="form-label">Address Line 04</label>
-                    <input type="text" class="form-control" id="Address04"
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email"
                            aria-describedby="emailHelp">
                   </div>
-                  <div class="mb-3">
-                    <label for="Address05" class="form-label">Address Line 05</label>
-                    <input type="text" class="form-control" id="Address05"
-                           aria-describedby="emailHelp">
-                  </div>
-
                   <div>
                     <label for="License-plate-number" class="form-label">Role</label>
                     <select class="form-select mb-3" aria-label="Default select example">
@@ -698,21 +561,12 @@
 
                     </select>
                   </div>
-                  <div>
-                    <label for="License-plate-number" class="form-label">Vehicle</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Vehicle 1</option>
-                      <option value="2">Vehicle 2</option>
-                      <option value="3">Vehicle 3</option>
 
-                    </select>
-                  </div>
                   <div class="mb-3">
                     <label for="vehicle-code" class="form-label"></label><br>
-                    <button type="button" class="btn btn-outline-primary m-2">Save</button>
-                    <button type="button" class="btn btn-outline-secondary m-2">Update</button>
-                    <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+                    <button type="button" id="saveStaffButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateStaffButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteStaffButton" class="btn btn-outline-danger m-2">Delete</button>
 
                   </div>
 
@@ -723,14 +577,15 @@
           </div>
         </div>
         <div>
-          <div class="container">
+          <div class="container mt-5">
 
 
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-body text-center">
-                    <h5 class="card-title m-b-0">Table of Vehicle Service</h5>
+                    <h5 class="card-title m-b-0">Table of Staff
+                      Service</h5>
                   </div>
                   <div class="table-responsive">
                     <table class="table">
@@ -738,110 +593,26 @@
                       <tr>
                         <th>
                           <label class="customcheckbox m-b-20">
-                            <input type="checkbox" id="mainCheckbox">
+                            <input type="checkbox" id="mainCheckbox4">
                             <span class="checkmark"></span>
                           </label>
                         </th>
-                        <th scope="col">Vehicle code</th>
-                        <th scope="col">License plate number</th>
-                        <th scope="col">Vehicle category</th>
-                        <th scope="col">Fuel type</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Allocated Drivers</th>
-                        <th scope="col">Remarks</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">gender</th>
+                        <th scope="col">joinedDate</th>
+                        <th scope="col">dob</th>
+                        <th scope="col">address</th>
+                        <th scope="col">contact</th>
+                        <th scope="col">email</th>
+                        <th scope="col">role</th>
+
                       </tr>
                       </thead>
-                      <tbody class="customtable">
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
+                      <tbody class="customtableCrop">
+
+
                       </tbody>
                     </table>
                   </div>
@@ -870,6 +641,11 @@
                     <input type="text" class="form-control" id="Log-Date"
                            aria-describedby="emailHelp">
                   </div>
+                  <div class="mb-3">
+                    <label for="observation" class="form-label">observation</label>
+                    <input type="text" class="form-control" id="observation"
+                           aria-describedby="emailHelp">
+                  </div>
 
                   <div>
                     <label for="crop-Image" class="fw-bold text-black">Crop Image</label>
@@ -883,17 +659,30 @@
               <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4"></h6>
                 <form>
-                  <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a Log here"
-                                          id="Log-Detail" style="height: 150px;"></textarea>
-                    <label for="floatingTextarea">Log Detail</label>
+                  <div>
+                    <label for="fieldLog" class="form-label">Field</label>
+                    <select id="fieldLog" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="staff-log" class="form-label">Staff</label>
+                    <select id="staff-log" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="crop-log" class="form-label">Crop</label>
+                    <select id="crop-log" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
                   </div>
 
                   <div class="mb-3">
                     <label for="vehicle-code" class="form-label"></label><br>
-                    <button type="button" class="btn btn-outline-primary m-2">Save</button>
-                    <button type="button" class="btn btn-outline-secondary m-2">Update</button>
-                    <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+                    <button type="button" id="saveLogButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateLogButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteLogButton" class="btn btn-outline-danger m-2">Delete</button>
 
                   </div>
 
@@ -904,14 +693,15 @@
           </div>
         </div>
         <div>
-          <div class="container">
+          <div class="container mt-5">
 
 
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-body text-center">
-                    <h5 class="card-title m-b-0">Table of Crop Service</h5>
+                    <h5 class="card-title m-b-0">Table of Log
+                      Service</h5>
                   </div>
                   <div class="table-responsive">
                     <table class="table">
@@ -919,110 +709,23 @@
                       <tr>
                         <th>
                           <label class="customcheckbox m-b-20">
-                            <input type="checkbox" id="cropCheckbox">
+                            <input type="checkbox" id="mainCheckbox5">
                             <span class="checkmark"></span>
                           </label>
                         </th>
-                        <th scope="col">Vehicle code</th>
-                        <th scope="col">License plate number</th>
-                        <th scope="col">Vehicle category</th>
-                        <th scope="col">Fuel type</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Allocated Drivers</th>
-                        <th scope="col">Remarks</th>
+                        <th scope="col">LogCode</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Observation</th>
+                        <th scope="col">ObservationImage</th>
+                        <th scope="col">FieldDTO</th>
+                        <th scope="col">StaffDTO</th>
+                        <th scope="col">Image</th>
+
                       </tr>
                       </thead>
-                      <tbody class="customtable">
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
+                      <tbody class="customtableCrop">
+
+
                       </tbody>
                     </table>
                   </div>
@@ -1103,11 +806,17 @@
                                           id="floatingTextarea" style="height: 150px;"></textarea>
                     <label for="floatingTextarea">Remark</label>
                   </div>
+                  <div>
+                    <label for="staff-dropdown" class="form-label">Staff</label>
+                    <select id="staff-dropdown" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
                   <div class="mb-3">
                     <label for="vehicle-code" class="form-label"></label><br>
-                    <button type="button" class="btn btn-outline-primary m-2">Save</button>
-                    <button type="button" class="btn btn-outline-secondary m-2">Update</button>
-                    <button type="button" class="btn btn-outline-danger m-2">Delete</button>
+                    <button type="button" id="saveVehicleButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateVehicleButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteVehicleButton" class="btn btn-outline-danger m-2">Delete</button>
 
                   </div>
 
@@ -1118,7 +827,7 @@
           </div>
         </div>
         <div>
-          <div class="container">
+          <div class="container mt-5">
 
 
             <div class="row">
@@ -1147,96 +856,7 @@
                       </tr>
                       </thead>
                       <tbody class="customtable">
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
-                      <tr>
-                        <th>
-                          <label class="customcheckbox">
-                            <input type="checkbox" class="listCheckbox">
-                            <span class="checkmark"></span>
-                          </label>
-                        </th>
-                        <td>C26</td>
-                        <td>DVC 6786</td>
-                        <td>Cab</td>
-                        <td>Petrol</td>
-                        <td>Available</td>
-                        <td>YES</td>
-                        <td>No Remarks</td>
-                      </tr>
+
                       </tbody>
                     </table>
                   </div>
@@ -1294,6 +914,7 @@
     const fieldButton = document.getElementById("field-button");
     const vehicleButton = document.getElementById("vehicle-button");
     const logButton = document.getElementById("LogMonitoring-button");
+    const dashboardButton = document.getElementById("dashboard-button");
     //Log_Monitoring-section
 
     const cropSection = document.getElementById("crop-section");
@@ -1301,6 +922,7 @@
     const fieldSection = document.getElementById("field-section");
     const vehicleSection = document.getElementById("vehicle-section");
     const logSection = document.getElementById("Log_Monitoring-section");
+    const dashboardSection = document.getElementById("dashboard-section");
 
     // Function to hide all sections
     function hideAllSections() {
@@ -1309,6 +931,7 @@
       fieldSection.style.display = "none";
       vehicleSection.style.display = "none";
       logSection.style.display = "none";
+      dashboardSection.style.display = "none";
     }
 
     // Show the crop section when the Crop button is clicked
@@ -1344,11 +967,20 @@
       hideAllSections();
       logSection.style.display = "block";
     });
+    // Show the Dashboard section when the Field button is clicked
+    dashboardButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      hideAllSections();
+      dashboardSection.style.display = "block";
+    });
 
   });
 </script>
 <script src="js/main.js"></script>
 <script src="js/main.js"></script>
+<script src="controller/FieldController.js"></script>
+<script src="controller/CropController.js"></script>
+<script src="controller/VehicleController.js"></script>
 </body>
 
 </html>
