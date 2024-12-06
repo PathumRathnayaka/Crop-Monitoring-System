@@ -65,6 +65,7 @@
         <a href="#" class="nav-item nav-link" id="field-button"><i class="fas fa-seedling"></i>Field</a>
         <a href="#" class="nav-item nav-link" id="crop-button"><i class="fas fa-leaf"></i></i>Crop</a>
         <a href="#" class="nav-item nav-link" id="staff-button"><i class="fas fa-users"></i>Staff</a>
+        <a href="#" class="nav-item nav-link" id="Equipment-button"><i class="fas fa-wrench"></i>Equipment</a>
         <a href="#" class="nav-item nav-link" id="LogMonitoring-button"><i class="fa fa-table me-2"></i>Log Monitoring</a>
         <a href="#" class="nav-item nav-link" id="vehicle-button"><i class="fas fa-truck"></i>Vehicle</a>
         <div class="nav-item dropdown">
@@ -368,7 +369,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="License-plate-number" class="form-label">Crop scientific name </label>
-                    <input type="text" class="form-control" id="Crop-scientific-name "
+                    <input type="text" class="form-control" id="Crop-scientific-name"
                            aria-describedby="emailHelp">
                   </div>
                   <div class="mb-3">
@@ -391,7 +392,7 @@
                            aria-describedby="emailHelp">
                   </div>
                   <div>
-                    <label for="field" class="form-label">Field</label>
+                    <label for="field-dropdown" class="form-label">Field</label>
                     <select id="field-dropdown" class="form-select mb-3" aria-label="Default select example">
                       <option selected>Open this select menu</option>
                     </select>
@@ -501,16 +502,16 @@
                   </div>
                   <div>
                     <label for="License-plate-number" class="form-label">Gender</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Male</option>
-                      <option value="2">Female</option>
+                    <select id="gender" class="form-select mb-3" aria-label="Default select example">
+                      <option value="MALE">Male</option>
+                      <option value="FEMALE">Female</option>
                     </select>
                   </div>
-                  <div class="mb-3">
-                    <label for="joined-Date" class="form-label">Joined Date</label>
-                    <input type="text" class="form-control" id="joined-Date"
-                           aria-describedby="emailHelp">
+                  <div class="mb-4">
+                    <label for="joinedDate" class="block text-gray-700 font-medium mb-2">Joined
+                      Date</label>
+                    <input type="date" id="joinedDate"
+                           class="border border-gray-300 rounded w-full p-2" required />
                   </div>
 
                 </form>
@@ -521,10 +522,11 @@
                 <h6 class="mb-4"></h6>
                 <form>
 
-                  <div class="mb-3">
-                    <label for="dob" class="form-label">Date of Birth</label>
-                    <input type="text" class="form-control" id="dob"
-                           aria-describedby="emailHelp">
+                  <div class="mb-4">
+                    <label for="dob" class="block text-gray-700 font-medium mb-2">Date of
+                      Birth</label>
+                    <input type="date" id="dob" class="border border-gray-300 rounded w-full p-2"
+                           required />
                   </div>
                   <div class="mb-3">
                     <label for="Address" class="form-label">Address </label>
@@ -541,24 +543,19 @@
                     <input type="text" class="form-control" id="email"
                            aria-describedby="emailHelp">
                   </div>
-                  <div>
-                    <label for="License-plate-number" class="form-label">Role</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Admin</option>
-                      <option value="2">User</option>
-                      <option value="3">Viewer</option>
-
+                  <div class="mb-4 col-span-2">
+                    <label for="role" class="block text-gray-700 font-medium mb-2">Role</label>
+                    <select id="role" class="border border-gray-300 rounded w-full p-2" required>
+                      <option value="">Select a Role</option>
+                      <option value="MANAGER">MANAGER</option>
+                      <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+                      <option value="SCIENTIST">SCIENTIST</option>
                     </select>
                   </div>
                   <div>
-                    <label for="License-plate-number" class="form-label">Field</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <label for="field-dropdownStaff" class="form-label">Field</label>
+                    <select id="field-dropdownStaff" class="form-select mb-3" aria-label="Default select example">
                       <option selected>Open this select menu</option>
-                      <option value="1">Field 1</option>
-                      <option value="2">Field 2</option>
-                      <option value="3">Field 3</option>
-
                     </select>
                   </div>
 
@@ -607,6 +604,117 @@
                         <th scope="col">contact</th>
                         <th scope="col">email</th>
                         <th scope="col">role</th>
+
+                      </tr>
+                      </thead>
+                      <tbody class="customtableStaff"></tbody>
+
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!--Equipment----------------->
+      <section id="Equipment-section" class="section" style="display: none;">
+        <div class="container-fluid pt-4 px-4">
+          <div class="row g-4">
+            <div class="col-sm-12 col-xl-6">
+              <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Equipment Form</h6>
+                <form>
+                  <div class="mb-3">
+                    <label for="Equipment-code" class="form-label">Equipment code</label>
+                    <input type="text" class="form-control" id="Equipment-code"
+                           aria-describedby="vehicleId">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Equipment-Name" class="form-label">Equipment Name</label>
+                    <input type="text" class="form-control" id="Equipment-Name"
+                           aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Equipment-type" class="form-label">Equipment Type</label>
+                    <input type="text" class="form-control" id="Equipment-type"
+                           aria-describedby="emailHelp">
+                  </div>
+
+                  <div>
+                    <label for="Equipment-status" class="form-label">Status</label>
+                    <select id="Equipment-status" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="col-sm-12 col-xl-6">
+              <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4"></h6>
+                <form>
+                  <div>
+                    <label for="field-dropdownEquipment" class="form-label">Field</label>
+                    <select id="field-dropdownEquipment" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="staff-Equipment" class="form-label">Staff</label>
+                    <select id="staff-Equipment" class="form-select mb-3" aria-label="Default select example">
+                      <option selected>Open this select menu</option>
+                    </select>
+                  </div>
+
+
+                  <div class="mb-3">
+                    <label for="vehicle-code" class="form-label"></label><br>
+                    <button type="button" id="saveEquipmentButton" class="btn btn-outline-primary m-2">Save</button>
+                    <button type="button" id="updateEquipmentButton" class="btn btn-outline-secondary m-2">Update</button>
+                    <button type="button" id="deleteEquipmentButton" class="btn btn-outline-danger m-2">Delete</button>
+
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div>
+          <div class="container mt-5">
+
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <h5 class="card-title m-b-0">Table of Equipment
+                      Service</h5>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="thead-light">
+                      <tr>
+                        <th>
+                          <label class="customcheckbox m-b-20">
+                            <input type="checkbox" id="mainCheckbox6">
+                            <span class="checkmark"></span>
+                          </label>
+                        </th>
+                        <th scope="col">EquipmentId</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Staff</th>
+                        <th scope="col">Field</th>
 
                       </tr>
                       </thead>
@@ -660,8 +768,8 @@
                 <h6 class="mb-4"></h6>
                 <form>
                   <div>
-                    <label for="fieldLog" class="form-label">Field</label>
-                    <select id="fieldLog" class="form-select mb-3" aria-label="Default select example">
+                    <label for="field-dropdownLog" class="form-label">Field</label>
+                    <select id="field-dropdownLog" class="form-select mb-3" aria-label="Default select example">
                       <option selected>Open this select menu</option>
                     </select>
                   </div>
@@ -915,6 +1023,7 @@
     const vehicleButton = document.getElementById("vehicle-button");
     const logButton = document.getElementById("LogMonitoring-button");
     const dashboardButton = document.getElementById("dashboard-button");
+    const equipmentButton = document.getElementById("Equipment-button");
     //Log_Monitoring-section
 
     const cropSection = document.getElementById("crop-section");
@@ -923,6 +1032,7 @@
     const vehicleSection = document.getElementById("vehicle-section");
     const logSection = document.getElementById("Log_Monitoring-section");
     const dashboardSection = document.getElementById("dashboard-section");
+    const EquipmentSection = document.getElementById("Equipment-section");
 
     // Function to hide all sections
     function hideAllSections() {
@@ -932,6 +1042,7 @@
       vehicleSection.style.display = "none";
       logSection.style.display = "none";
       dashboardSection.style.display = "none";
+      EquipmentSection.style.display = "none";
     }
 
     // Show the crop section when the Crop button is clicked
@@ -974,6 +1085,13 @@
       dashboardSection.style.display = "block";
     });
 
+    // Show the Equipment section when the Field button is clicked
+    equipmentButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+      hideAllSections();
+      EquipmentSection.style.display = "block";
+    });
+
   });
 </script>
 <script src="js/main.js"></script>
@@ -981,6 +1099,10 @@
 <script src="controller/FieldController.js"></script>
 <script src="controller/CropController.js"></script>
 <script src="controller/VehicleController.js"></script>
+<script src="controller/StaffController.js"></script>
+<script src="controller/LogController.js"></script>
+<script src="controller/EquipmentController.js"></script>
+
 </body>
 
 </html>

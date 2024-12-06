@@ -162,3 +162,84 @@ $(document).ready(function () {
     loadFieldCodes();
 });
 
+/*staff dropdown-------*/
+$(document).ready(function () {
+    // Fetch FieldCode data from FieldController and populate the dropdown
+    function loadFieldCodesForStaff() {
+        $.ajax({
+            url: 'http://localhost:8080/api/v1/fields', // Replace with your FieldController API URL
+            method: 'GET',
+            success: function (data) {
+                const dropdown = $('#field-dropdownStaff');
+                dropdown.empty(); // Clear existing options
+                dropdown.append('<option selected>Open this select menu</option>'); // Default option
+
+                // Populate dropdown with field codes
+                data.forEach(function (field) {
+                    dropdown.append(`<option value="${field.fieldCode}">${field.fieldCode}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching FieldCodes:", error);
+            }
+        });
+    }
+
+    // Call the function to load field codes when the page loads
+    loadFieldCodesForStaff();
+});
+
+/*Equipment drop down---------*/
+$(document).ready(function () {
+    // Fetch FieldCode data from FieldController and populate the dropdown
+    function loadFieldCodesForEquipment() {
+        $.ajax({
+            url: 'http://localhost:8080/api/v1/fields', // Replace with your FieldController API URL
+            method: 'GET',
+            success: function (data) {
+                const dropdown = $('#field-dropdownEquipment');
+                dropdown.empty(); // Clear existing options
+                dropdown.append('<option selected>Open this select menu</option>'); // Default option
+
+                // Populate dropdown with field codes
+                data.forEach(function (field) {
+                    dropdown.append(`<option value="${field.fieldCode}">${field.fieldCode}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching FieldCodes:", error);
+            }
+        });
+    }
+
+    // Call the function to load field codes when the page loads
+    loadFieldCodesForEquipment();
+});
+
+/*log Drop down list--------*/
+$(document).ready(function () {
+    // Fetch FieldCode data from FieldController and populate the dropdown
+    function loadFieldCodesForLog() {
+        $.ajax({
+            url: 'http://localhost:8080/api/v1/fields', // Replace with your FieldController API URL
+            method: 'GET',
+            success: function (data) {
+                const dropdown = $('#field-dropdownLog');
+                dropdown.empty(); // Clear existing options
+                dropdown.append('<option selected>Open this select menu</option>'); // Default option
+
+                // Populate dropdown with field codes
+                data.forEach(function (field) {
+                    dropdown.append(`<option value="${field.fieldCode}">${field.fieldCode}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching FieldCodes:", error);
+            }
+        });
+    }
+
+    // Call the function to load field codes when the page loads
+    loadFieldCodesForLog();
+});
+

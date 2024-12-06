@@ -23,30 +23,61 @@ $(document).ready(function () {
 
     // Save method
     $('#saveCropButton').on('click', function () {
-        const newCrop = {
-            cropCode: $('#Crop-code').val(),
-            commonName: $('#Crop-common-name').val(),
-            scientificName: $('#Crop-scientific-name').val(),
-            category: $('#Category').val(),
-            season: $('#season').val(),
-            field: $('#field').val(),
-            cropImage: cropImageBase64
-        };
-        console.log(newCrop);
-        $.ajax({
-            url: 'http://localhost:8080/api/v1/crops', // Backend API URL
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(newCrop),
-            success: function () {
-                alert('Crop saved successfully!');
-                loadTableData();
-            },
-            error: function (xhr, status, error) {
-                console.error("Error saving crop:", error);
-            }
+        const cropFieldId = $('#field-dropdown').val(); // Simplified jQuery selection
+        if (!cropFieldId) {
+            alert('Please select a valid field.');
+            return;
+        }
+
+        fetchField(cropFieldId, (field) => {
+
+            const newCrop = {
+                cropCode: $('#Crop-code').val(),
+                commonName: $('#Crop-common-name').val(),
+                scientificName: $('#Crop-scientific-name').val(),
+                category: $('#Category').val(),
+                season: $('#season').val(),
+                fieldDTO: field,
+                image: cropImageBase64 // Ensure cropImageBase64 is set
+            };
+
+
+            $.ajax({
+                url: 'http://localhost:8080/api/v1/crops',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(newCrop),
+                success: function () {
+                    alert('Crop saved successfully!');
+                    loadTableData(); // Ensure this function refreshes the table correctly
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error saving crop:", error);
+                    alert('Failed to save crop. Please try again.');
+                }
+            });
         });
     });
+
+    function fetchField(fieldId, callback) {
+        $.ajax({
+            url: `http://localhost:8080/api/v1/fields/${fieldId}`,
+            method: "GET",
+            success: function (field) {
+                if (!field) {
+                    alert("Field data is empty or invalid.");
+                    return;
+                }
+                callback(field); // Pass the field data to the callback
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading field:", error);
+                alert("Failed to load field data. Please try again.");
+            }
+        });
+    }
+
+
 
     // Update method
     $('#updateCropButton').on('click', function () {
@@ -104,17 +135,18 @@ $(document).ready(function () {
             success: function (data) {
                 let tableBody = '';
                 data.forEach(function (crop) {
+                    const fieldId = crop.fieldDTO ? crop.fieldDTO.id : 'N/A'; // Get Field ID or fallback
                     tableBody += `
-                        <tr>
-                            <td><input type="checkbox" class="listCheckbox"></td>
-                            <td>${crop.cropCode}</td>
-                            <td>${crop.commonName}</td>
-                            <td>${crop.scientificName}</td>
-                            <td>${crop.category}</td>
-                            <td>${crop.season}</td>
-                            <td>${crop.field}</td>
-                            <td><img src="${crop.cropImage}" alt="Crop Image" style="width: 50px; height: 50px;"></td>
-                        </tr>`;
+                    <tr>
+                        <td><input type="checkbox" class="listCheckbox"></td>
+                        <td>${crop.cropCode}</td>
+                        <td>${crop.commonName}</td>
+                        <td>${crop.scientificName}</td>
+                        <td>${crop.category}</td>
+                        <td>${crop.season}</td>
+                        <td>${fieldId}</td> <!-- Display Field ID -->
+                        <td><img src="${crop.cropImage}" alt="Crop Image" style="width: 50px; height: 50px;"></td>
+                    </tr>`;
                 });
                 $('.customtableCrop').html(tableBody);
             },
