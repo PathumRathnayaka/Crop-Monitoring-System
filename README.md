@@ -1,6 +1,6 @@
 # Green Shadow Crop Monitoring Frontend
 
-![Spring Boot]([https://1.bp.blogspot.com/-TevOgPVC2dE/WnILAnucRVI/AAAAAAAAGU0/OlrnoLsf2fs9aKpm9_BGEqk5R54gUCZbgCLcBGAs/s1600/spring-boot.png](https://banner2.cleanpng.com/20180409/wzq/avgzba71m.webp))
+![Spring Boot](https://banner2.cleanpng.com/20180409/wzq/avgzba71m.webp)
 
 
 Welcome to the **Green Shadow Crop Monitoring Frontend**! This project is designed to provide a user-friendly interface for managing and monitoring crops effectively. Built with **Bootstrap**, this application ensures a responsive and visually appealing experience across all devices.
